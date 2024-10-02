@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block artists_active %}active {% endblock %}
+
+{% block content %}
+ <!-- ======= Breadcrumbs ======= -->
+ <div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>Our Artist</h2>
+            <p>our artist curently signed to our lable </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="{% url 'clientapp:homepage'%}">Home</a></li>
+          <li>Artists</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- artists section -->
+  <section class="artists">
+    <div class="container">
+      <div class="row">
+        {% for artist in artist %}
+
+        <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+          <a href="{% url 'clientapp:artists_details' artist.id %}" class="link mb-4">
+            <img src= "{{ artist.picture.url }}" class="img-fluid" alt="{{artist.artist_name}}" style="width: 30rem; height:30rem; ">
+          </a>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+  </section>
+{% endblock %}

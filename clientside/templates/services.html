@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block services_active %} active {% endblock %}
+
+
+{% block content %}
+ <!-- ======= Breadcrumbs ======= -->
+ <div class="breadcrumbs">
+  <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+    <div class="container position-relative">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>Services</h2>
+          <p>Detailing the services we provide to artists</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'clientapp:homepage'%}">Home</a></li>
+        <li>Services</li>
+      </ol>
+    </div>
+  </nav>
+</div><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Services</h2>
+            <p>Our services</p>
+          </div>
+  
+          <div class="row" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-6">
+              <div class="icon-box">
+                <i class="bi bi-laptop"></i>
+                <h4><a href="#">Artist Crescendo Development</a></h4>
+                <p>Jungle empire Records guides artists on their journey to success through Artist Crescendo Development, focusing on image refinement, branding, public relations, long-term career planning, and industry navigation to help artists achieve their full potential and make their mark in the music world.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="bi bi-bar-chart"></i>
+                <h4><a href="#">Legal and Business Affairs</a></h4>
+                <p>Our Legal Harmony and Business Affairs team ensures that artists are protected and fairly compensated, handling contract negotiations, copyright protection, royalty collection, licensing agreements, and intellectual property rights management with precision and care.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="bi bi-brightness-high"></i>
+                <h4><a href="#">Studio Access</a></h4>
+                <p>We provides artists with exclusive access to Harmony Studios, a cutting-edge recording facility equipped with top-of-the-line equipment, experienced sound engineers, and renowned producers to bring the artist's musical vision to life</p>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="bi bi-briefcase"></i>
+                <h4><a href="#">Spotlight Campaigns</a></h4>
+                <p>Our dedicated marketing team at Jungle Empire Records crafts bespoke Sonic Spotlight Campaigns for each artist, tailored to their unique style and audience. From securing radio play to organizing intimate listening parties, we ensure that your music reaches the right ears at the right time.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="bi bi-card-checklist"></i>
+                <h4><a href="#">MelodyMakers Tours</a></h4>
+                <p>Our Jungle empire Tours support artists in planning and executing successful tours, providing access to seasoned tour managers, booking agents, promotional assistance, transportation, and accommodation to ensure unforgettable live performances and fan engagement.</p>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="bi bi-clock"></i>
+                <h4><a href="#">Sync Symphonies Licensing</a></h4>
+                <p>Through Sync Symphonies Licensing, Jungle Empire Records helps artists license their music for placements in films, TV shows, commercials, and other media, expanding their reach and generating additional income through royalties and licensing opportunities.</p>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Services Section -->
+  {% endblock %}

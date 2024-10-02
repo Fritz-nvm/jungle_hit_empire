@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block homepage_active %} active {% endblock %}
+
+
+{% block hero %}
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+      
+      <h1>Jungle Hit Empire</h1>
+      <h2 >Discover rhythms and melodies that resonate with the soul</h2>
+      <div class="d-flex">
+        <a href="#" class="btn-get-started scrollto">Book Online</a>
+        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+{% endblock %}
+
+{% block content %}
+ <!-- ======= About Section ======= -->
+ <section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+
+      <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+        <img src="{% static 'assets\img\headphones_on_black.jpg' %}" class="img-fluid" alt="">
+        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+      </div>
+
+      <div class="col-lg-6 pt-3 pt-lg-0 content">
+        <h3>Jungle Hit empire is an independent record label based in Cameroon, Douala</h3>
+        <p class="fst-italic">
+         We bring you the most original, independent music from african artists and beyond
+        </p>
+      </div>
+    </div>
+  </div>
+</section><!-- End About Section -->
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Services</h2>
+      <p>Our services</p>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-md-6">
+        <div class="icon-box">
+          <i class="bi bi-laptop"></i>
+          <h4><a href="#">Artist Development</a></h4>
+          <p>Jungle hit empire Records guides artists on their journey to success through Artist Crescendo Development, focusing on image refinement, branding, public relations, long-term career planning, and industry navigation to help artists achieve their full potential and make their mark in the music world.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-bar-chart"></i>
+          <h4><a href="#">Legal and Business Affairs</a></h4>
+          <p>Our Legal  and Business Affairs team ensures that artists are protected and fairly compensated, handling contract negotiations, copyright protection, royalty collection, licensing agreements, and intellectual property rights management with precision and care.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-brightness-high"></i>
+          <h4><a href="#">Studio Access</a></h4>
+          <p>We provides artists with exclusive access to empire Studios, a cutting-edge recording facility equipped with top-of-the-line equipment, experienced sound engineers, and renowned producers to bring the artist's musical vision to life</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-briefcase"></i>
+          <h4><a href="#">Spotlight Campaigns</a></h4>
+          <p>Our dedicated marketing team at Jungle Empire Records crafts Spotlight Campaigns for each artist, tailored to their unique style and audience. From securing radio play to organizing intimate listening parties, we ensure that your music reaches the right ears at the right time.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-card-checklist"></i>
+          <h4><a href="#">Tours</a></h4>
+          <p>Our Jungle empire Tours support artists in planning and executing successful tours, providing access to seasoned tour managers, booking agents, promotional assistance, transportation, and accommodation to ensure unforgettable live performances and fan engagement.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-clock"></i>
+          <h4><a href="#">Sync Symphonies Licensing</a></h4>
+          <p>Through Sync Symphonies Licensing, Jungle Empire Records helps artists license their music for placements in films, TV shows, commercials, and other media, expanding their reach and generating additional income through royalties and licensing opportunities.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Services Section -->
+<!-- artists section -->
+<section id="services" class="services section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2>Artists</h2>
+      <p>Our artist</p>
+    </div>
+
+    <div class="row">
+
+      {% for artist in artist %}
+
+      <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+        <a href="{% url 'clientapp:artists'%}" class="link mb-4">
+          <img src= "{{ artist.picture.url }}" class="img-fluid" alt="{{artist.artist_name}}" style="width: 30rem; height:30rem; ">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+ <!-- ======= Portfolio Details Section ======= -->
+ <section id="services" class="services section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2>Songs</h2>
+      <p>Our Songs</p>
+    </div>
+    <h1 class="bold text-center"></h1>
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        {% for songs in songs %}
+          <div class="song">
+              <h4>{{songs.title}}-{{songs.artists}}</h4>
+              <iframe width="350" height="300" src="{{songs.youtube_link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p><a href="{{songs.spotify_link}}" target="_blank">Listen on Spotify</a></p>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up"">
+
+<div class=" section-title">
+    <h2>Contact</h2>
+    <p>Contact Us</p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-6">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="info-box">
+            <i class="bx bx-map"></i>
+            <h3>Our Address</h3>
+            <p>Douala, Cameroon </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-box mt-4">
+            <i class="bx bx-envelope"></i>
+            <h3>Email Us</h3>
+            <p>Junglehitempire@gmail.com<br></p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-box mt-4">
+            <i class="bx bx-phone-call"></i>
+            <h3>Call Us</h3>
+            <p>+1 5589 55488 55<br></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-lg-6 mt-4 mt-lg-0">
+      <form action="" method="post" role="form" class="php-email-form">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+        </div>
+        <div class="my-3">
+          <div class="loading">Loading</div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your message has been sent. Thank you!</div>
+        </div>
+        <div class="text-center"><button type="submit">Send Message</button></div>
+      </form>
+    </div>
+
+  </div>
+
+  </div>
+</section><!-- End Contact Section -->
+{% endblock %}

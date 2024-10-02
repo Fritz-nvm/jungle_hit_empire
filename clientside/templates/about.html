@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block about_active %} active {% endblock %}
+
+
+{% block content %}
+ <!-- ======= Breadcrumbs ======= -->
+ <div class="breadcrumbs">
+  <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+    <div class="container position-relative">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>About</h2>
+          <p>Welcome to Harmony Sounds Records, where music meets passion and creativity knows no bounds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'clientapp:homepage' %}">Home</a></li>
+        <li>About</li>
+      </ol>
+    </div>
+  </nav>
+</div><!-- End Breadcrumbs -->
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-6 video-box align-self-baseline" data-aos="zoom-in" data-aos-delay="100">
+          <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+          <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+        </div>
+
+        <div class="col-lg-6 pt-3 pt-lg-0 content">
+          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <p class="fst-italic">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua.
+          </p>
+          <ul>
+            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+            <li><i class="bx bx-check-double"></i> Voluptate repellendus pariatur reprehenderit corporis sint.</li>
+            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+          </ul>
+          <p>
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= About Boxes Section ======= -->
+  <section id="about-boxes" class="about-boxes">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="card">
+            <img src="{% static 'assets/img/about-boxes-1.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-icon">
+              <i class="ri-brush-4-line"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Our Mission</a></h5>
+              <p class="card-text">Our mission at Jungle Empire Records is to discover, develop, and promote exceptional talent from across the musical spectrum. We strive to provide a platform where artists can freely explore their creativity, push boundaries, and share their unique voices with a global audience.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="card">
+            <img src="{% static 'assets/img/about-boxes-2.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-icon">
+              <i class="ri-calendar-check-line"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Our Plan</a></h5>
+              <p class="card-text">We are dedicated to fostering artistic excellence, cultural diversity, and social impact within the music industry. Through artist development programs, diverse music curation, strategic partnerships, digital marketing initiatives, and engaging live events, we aim to amplify the voices of our artists and connect with audiences on a global scale. By embracing innovation, social responsibility, and continuous growth, we strive to create a harmonious community where music transcends boundaries, inspires change, and leaves a lasting impact on hearts and minds worldwide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <img src="{% static 'assets/img/about-boxes-3.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-icon">
+              <i class="ri-movie-2-line"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Our Vision</a></h5>
+              <p class="card-text">Our vision at Jungle Empire Records is to be a global beacon of musical excellence, known for our unwavering dedication to artistic integrity, cultural diversity, and social impact. We aspire to shape the future of the music industry by fostering a community where creativity knows no bounds, and where every note resonates with authenticity and passion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Boxes Section -->
+{% endblock %}

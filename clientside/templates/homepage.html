@@ -35,6 +35,10 @@
         <p class="fst-italic">
          We bring you the most original, independent music from african artists and beyond
         </p>
+        <ul>
+          <li><i class="bx bx-check-double"></i> Driven by a passion for diversity and a deep appreciation for cultural richness. </li>
+          <li><i class="bx bx-check-double"></i> Blending traditional Cameroonian rhythms with contemporary influences to create a unique and captivating sound.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -60,7 +64,7 @@
         <div class="icon-box">
           <i class="bi bi-bar-chart"></i>
           <h4><a href="#">Legal and Business Affairs</a></h4>
-          <p>Our Legal  and Business Affairs team ensures that artists are protected and fairly compensated, handling contract negotiations, copyright protection, royalty collection, licensing agreements, and intellectual property rights management with precision and care.</p>
+          <p>Our Legal and Business Affairs team ensures that artists are protected and fairly compensated, handling contract negotiations, copyright protection, royalty collection, licensing agreements, and intellectual property rights management with precision and care.</p>
         </div>
       </div>
       <div class="col-md-6 mt-4 mt-md-0">
@@ -126,13 +130,18 @@
     <h1 class="bold text-center"></h1>
     <div class="row gy-4">
       <div class="col-lg-4">
-        {% for songs in songs %}
-          <div class="song">
-              <h4>{{songs.title}}-{{songs.artists}}</h4>
-              <iframe width="350" height="300" src="{{songs.youtube_link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p><a href="{{songs.spotify_link}}" target="_blank">Listen on Spotify</a></p>
-          </div>
-          {% endfor %}
+        {% for song in songs %}
+        <div class="song">
+            <h4>{{ song.title }} - 
+                {% for artist in song.artists.all %}
+                    {{ artist.artist_name }}
+                    {% if not forloop.last %},{% endif %}
+                {% endfor %}
+            </h4>
+            <iframe width="350" height="300" src="{{ song.youtube_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p><a href="{{ song.spotify_link }}" target="_blank">Listen on Spotify</a></p>
+        </div>
+       {% endfor %}
       </div>
     </div>
   </div>
